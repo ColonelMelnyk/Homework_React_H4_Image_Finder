@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Homework_React_H4_Image_Finder/static/css/main.17e20ace.css",
+    "main.js": "/Homework_React_H4_Image_Finder/static/js/main.7aaf0d1d.js",
+    "index.html": "/Homework_React_H4_Image_Finder/index.html",
+    "main.17e20ace.css.map": "/Homework_React_H4_Image_Finder/static/css/main.17e20ace.css.map",
+    "main.7aaf0d1d.js.map": "/Homework_React_H4_Image_Finder/static/js/main.7aaf0d1d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17e20ace.css",
+    "static/js/main.7aaf0d1d.js"
+  ]
+}
