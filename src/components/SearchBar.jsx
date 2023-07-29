@@ -1,23 +1,21 @@
-import {React, Component} from 'react';
+import {React,  useState} from 'react';
 import css from './image-finder-styles.module.css';
 import PropTypes from 'prop-types';
-export class SearchBar extends Component{
-    state = {
-        searchValue: ''
-    }
-    onHandleInput = event => {
+export const SearchBar = ({onSubmit})=>{
+    const [value, setValue] = useState ('');
+    
+    const onHandleInput = event =>{
         event.preventDefault();
-        this.setState({searchValue: event.currentTarget.value });
+        const {value} = event.target
+        setValue (value);
     };
-    onHandleSubmit = event =>{
+    const onHandleSubmit = event =>{
         event.preventDefault();
-       this.props.onSubmit(this.state.searchValue);
-      
+        onSubmit(value);
     };
-    render(){
  return(
         <header >
-        <form  className ={css.search_form} onSubmit ={this.onHandleSubmit}>
+        <form  className ={css.search_form} onSubmit ={onHandleSubmit}>
             <button type="submit" className={css.button} ><span >Search</span></button>
             <input
             className ={css.search_form_input}
@@ -25,12 +23,11 @@ export class SearchBar extends Component{
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
-            onChange ={this.onHandleInput}
+            onChange ={onHandleInput}
             />
         </form>
         </header>
         )
-    }
 }
 SearchBar.propTypes ={
     onSubmit: PropTypes.func.isRequired,
