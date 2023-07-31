@@ -11,7 +11,7 @@ export const Modal = ({closeModalTrigger, image}) => {
       }
     };
     window.addEventListener("keydown", onEscapeKeyHandler);
-    return() => window.addEventListener("keydown", onEscapeKeyHandler);
+    return() => window.removeEventListener("keydown", onEscapeKeyHandler);
   },[closeModalTrigger])
    const overlayKeyHandler = event => {
     if (event.target === event.currentTarget) {

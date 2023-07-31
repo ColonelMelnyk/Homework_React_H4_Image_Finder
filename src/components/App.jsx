@@ -15,15 +15,11 @@ export function App() {
   const [selectedImage, setSelectedImage] = useState('');
   const [total, setTotal] = useState(0);
 
-  useEffect(() => {
-    if (search.trim() !== '') {
-      setImages([]);
-      setPage(1);
-    }
-  }, [search]);
 
   useEffect(() => {
-    fetchImages(page, search);
+    if (search){
+      fetchImages(page, search);
+    }
   }, [page, search]);
 
   const fetchImages = async (page, search) => {
